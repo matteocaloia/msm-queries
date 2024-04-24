@@ -1,30 +1,30 @@
-<h1> Director #<% @the_director.id%> details</h1>
+<h1>Director #<%= @director.id %> details</h1>
 
-<a href= "/directors">Go back</a>
+<a href="/directors">Go back</a>
 
 <hr>
 
 <dl>
   <dt>Name</dt>
-  <dd><%= @the_ director.name %></dd>
+  <dd><%= @director.name %></dd>
 
-  <dt>Dob</dt>
-  <dd><%= @the_director.dob %></dd>
-  
+  <dt>Date of birth</dt>
+  <dd><%= @director.dob %></dd>
+
   <dt>Bio</dt>
-  <dd><%= @the_director.bio %></dd>
-  
+  <dd><%= @director.bio %></dd>
+
   <dt>Image</dt>
-  <dd><img src="<%= @the_director.image %>" width="200"></dd>
-  
-  <dt>Created at</dt> 
-  <dd><%= @the_director.created_at %></dd>
+  <dd>
+    <img src="<%= @director.image %>" width="200">
+  </dd>
 
-  <dt>Updated at</dt> 
-  <dd><%= @the_director.updated_at %></dd>
+  <dt>Created at</dt>
+  <dd><%= @director.created_at %></dd>
+
+  <dt>Updated at</dt>
+  <dd><%= @director.updated_at %></dd>
 </dl>
-
-
 
 
 <h2>Filmography</h2>
@@ -54,5 +54,5 @@
     <td><%= movie.director_id %></td>
     <td><a href="/movies/<%=movie.id%>"> Show details</a></td>
   </tr>
-  
 <%end%>
+

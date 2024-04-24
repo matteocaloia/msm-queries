@@ -1,15 +1,20 @@
 class DirectorsController < ApplicationController
- def index
-  render({:template => "director_templates/list"})
- end
+  def index
+    render({:template => "director_templates/list"})
+  end
 
- def show
-    the_id = params.fetch("the_id")
+  def show
+    director_id = params["director_id"]
+    @director = Director.where({:id => director_id}).at(0)
+    render({:template => "director_templates/details"})
+  end
 
-    matching_records = Director.where({ :id => the_id})
+  def youngest
+    render({:template => "director_templates/youngest"})
+  end
 
-    @the_director = matching_records.at(0)
+  def eldest
+    render({:template => "director_templates/eldest"})
+  end
 
-  render({:template => "director_templates/details"})
- end
 end
