@@ -1,0 +1,9 @@
+<%youngest_director = Director.order(dob: :desc).first%>
+<%name = youngest_director.name%>
+<%date = youngest_director.dob.to_s%>
+<%formatted_date = Date.parse(date).strftime("%B %d, %Y")%>
+
+
+<h1>Youngest Director</h1>
+
+The youngest director in our dataset right now is <a href="/directors/<%=youngest_director.id%>"><%=name%></a>, born on <%=formatted_date%>.
