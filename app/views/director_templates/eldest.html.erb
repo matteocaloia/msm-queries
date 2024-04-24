@@ -1,4 +1,4 @@
-<%eldest_director = Director.order(dob: :asc).first%>
+<%eldest_director = Director.where.not({ :dob => nil }).order({ :dob => :asc }).at(0)%>
 <%name = eldest_director.name%>
 <%date = eldest_director.dob.to_s%>
 <%formatted_date = Date.parse(date).strftime("%B %d, %Y")%>
@@ -7,4 +7,3 @@
 <h1>Eldest Director</h1>
 
 The eldest director in our dataset right now is <a href="/directors/<%=eldest_director.id%>"><%=name%></a>, born on <%=formatted_date%>.
-

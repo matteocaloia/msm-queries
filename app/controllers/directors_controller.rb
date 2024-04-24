@@ -16,5 +16,6 @@ class DirectorsController < ApplicationController
   def eldest
     render({:template => "director_templates/eldest"})
   end
+  
 
 end
